@@ -4,8 +4,8 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
-use App\Enums\Sexo;
 use App\Enums\EstadoCivil;
+use App\Enums\Sexo;
 
 class Pessoa extends Model
 {
