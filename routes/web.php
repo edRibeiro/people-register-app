@@ -4,9 +4,6 @@ use App\Http\Controllers\PessoaController;
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 
-Route::get('/', function () {
-    return redirect('pessoas');
-});
 
 Route::get('/dashboard', function () {
     return view('dashboard');
@@ -18,6 +15,6 @@ Route::middleware('auth')->group(function () {
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 });
 
-Route::resource('pessoas', PessoaController::class);
-
 require __DIR__ . '/auth.php';
+
+Route::resource('pessoas', PessoaController::class);

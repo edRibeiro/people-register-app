@@ -32,7 +32,7 @@ class PessoaController extends Controller
     public function store(StorePessoaRequest $request)
     {
         Pessoa::create($request->all());
-        return redirect()->route('pessoas.index')->with('success', 'Pessoa criada com sucesso!');
+        return redirect('pessoas')->with('success', 'Pessoa cadastrada com sucesso!');
     }
 
     /**
@@ -57,7 +57,7 @@ class PessoaController extends Controller
     public function update(UpdatePessoaRequest $request, Pessoa $pessoa)
     {
         $pessoa->update($request->all());
-        return redirect()->route('pessoas.index')->with('success', 'Pessoa atualizada com sucesso!');
+        return redirect('pessoas')->with('success', 'Pessoa atualizada com sucesso!');
     }
 
     /**
@@ -66,6 +66,6 @@ class PessoaController extends Controller
     public function destroy(Pessoa $pessoa)
     {
         $pessoa->delete();
-        return redirect()->route('pessoas.index')->with('success', 'Pessoa deletada com sucesso!');
+        return redirect('pessoas')->with('success', 'Pessoa removida com sucesso!');
     }
 }
